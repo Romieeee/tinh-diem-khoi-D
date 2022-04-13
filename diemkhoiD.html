@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>TÍNH ĐIỂM ĐẠI HỌC KHỐI D</h1>
+    Môn Toán <input type="text" id="toan" /><br><br>
+    Môn Văn <input type="text" id="van" /><br><br>
+    Môn Anh <input type="text" id="anh" /><br><br>
+    Khu vực <select id="select">
+        <option value="" id="kv1">KV1</option>
+        <option value="" id="kv2">KV2</option>
+        <option value="" id="kv2_nt">KV2-NT</option>
+        <option value="" id="kv3">KV3</option>
+    </select><br><br>
+
+    <button onlick="tinh()">Tính điểm</button>
+    <p id="kq"></p>
+
+    <script>
+        function tinh() {
+            let toan = +document.getElementById("toan").value;
+            let van = +document.getElementById("van").value;
+            let anh = +document.getElementById("anh").value;
+            let slt = +document.getElementById("select").value;
+            let kv1 = +document.getElementById("kv1").value;
+            let kv2 = +document.getElementById("kv2").value;
+            let kv2_nt = +document.getElementById("kv2_nt").value;
+            let kv3 = +document.getElementById("kv3").value;
+
+            if (slt == kv1) {
+                document.getElementById("kq").innerHTML = "Tổng điểm khối D của bạn là: " + (toan + van + anh + 0.75);
+            }
+            if (slt == kv2) {
+                document.getElementById("kq").innerHTML = "Tổng điểm khối D của bạn là: " + (toan + van + anh + 0.25);
+            }
+            if (slt == kv2_nt) {
+                document.getElementById("kq").innerHTML = "Tổng điểm khối D của bạn là: " + (toan + van + anh + 0.5);
+            } else {
+                document.getElementById("kq").innerHTML = "Tổng điểm khối D của bạn là: " + (toan + van + anh);
+            }
+        }
+    </script>
+</body>
+
+</html>
